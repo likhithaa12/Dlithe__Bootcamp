@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register Page</title>
+    <link rel="stylesheet" href="Register.css"><!--used to link the css page--><!--external css-->
+    
+    
+</head>
+<body>
+    <div class="part1" id="part1_id"></div>
+    
+    <div class="part2" id="part2_id">
+        <h1>Register Page</h1>
+        <form id="registerForm" action="Login.html" method="post">
+            <label for="name">Enter Your UserName</label>
+            <input type="text" placeholder="Enter your Name" name="Name" required><br><br>
+            <label for="name">Enter Your Email</label>
+            <input type="email" placeholder="Enter your Email" name="Email" required><br><br>
+            <label for="name">Enter Your Password</label>
+            <input type="password" placeholder="Enter your Password" name="Password" required><br><br>
+            <button type="submit">Submit</button>
+        </form>
+        <!--success message-->
+        <div id="success" class="success">Registration successful! Redirecting to login page...</div>
+    </div>
+
+    <script>
+        
+        function showSuccess() {
+           
+            document.getElementById("success").style.display = "block";
+           
+            setTimeout(function() {
+                window.location.href = "Login.html";
+            }, 3000);
+        }
+
+       
+        document.getElementById("registerForm").addEventListener("submit", function(event) {
+            
+            event.preventDefault();
+           
+            showSuccess();
+        });
+    </script>
+</body>
+</html>

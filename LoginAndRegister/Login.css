@@ -1,0 +1,32 @@
+
+.part2{
+    padding-left: 100px;
+    height:200px;
+    width:200px;
+    padding: 60px;
+    border:6px solid black;
+}
+.part1{
+    padding-left: 100px;
+    height:200px;
+    width:200px;
+    padding: 60px;
+    border:6px solid black;
+}
+#part3_id{
+    background-color: rgb(87, 153, 180);
+    position:absolute;
+    left: 380px;
+    top: 200px;
+    background-image: url(Register.jpg);
+    
+    background-size: cover;
+}
+#part4_id{
+    background-color: rgb(94, 166, 192);
+    position:absolute;
+    left: 700px;
+    top: 200px;
+    
+}
+
