@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Reg Form</title>
+</head>
+<link rel="stylesheet" href="student.css"><!--used to link the css page--><!--external css-->
+
+<body>
+    <h1>Student Registration-Form Validation</h1>
+    <hr>
+    <form method="" action="" name="myform" onsubmit="return validate()">
+        <h2>Registration Form</h2>
+        <table>
+            <tr>
+                <td><label>First Name: </label></td>
+                <td>
+                    <input type="text" name="fname" placeholder="First Name">
+                </td>
+            </tr>
+            <tr>
+                <td><label>Last Name: </label></td>
+                <td>
+                    <input type="text" name="lname" placeholder="Last Name">
+                </td>
+            </tr>
+            
+            <tr>
+                <td><label>Roll Number :</label></td>
+                <td>
+                    <input type="text" name="roll" placeholder="Roll Number">
+                </td>
+            </tr>
+            <tr>
+                <td><label>Password: </label></td>
+                <td>
+                    <input type="password" name="Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" placeholder="password">
+                </td>
+            </tr>
+            <tr>
+                <td><label>Email Id: </label></td>
+                <td>
+                    <input type="email" name="email" placeholder="example@gmail.com">
+                </td>
+            </tr>
+            
+            
+            <tr>
+                <td>
+                    <input type="submit" name="submit" value="Submit">
+                    
+                </td>
+            </tr>
+        </table>
+    </form>
+    <script>
+        function validate() {
+            var fname = document.myform.fname;
+            var lname = document.myform.lname;
+            var roll = document.myform.roll;
+            var email = document.myform.email;
+            var letters = /^[A-Za-z]+$/;
+            if (fname.value.length <= 0 ) {
+                alert("Name is required");
+                fname.focus();
+                return false;
+            }
+            
+            if (lname.value.length <= 0) {
+                alert("Last Name is required");
+                lname.focus();
+                return false;
+            }
+            if (roll.value.length <= 0) {
+                alert("Roll number is required");
+                lname.focus();
+                return false;
+            }
+            if(fname.value.match(letters) && lname.value.match(letters) )
+            {
+                return true;
+            }
+            else
+            {
+                alert('User name must have alphabet characters only');
+                fname.focus();
+                return false;
+            }
+            
+            
+            if (email.value.length <= 0 ) {
+                alert("Email Id is required");
+                email.focus();
+                return false;
+            }
+            if(password!=regex){
+                alert("Please provide the valid password");
+            }
+        }
+    </script>
+</body>
+</html>
