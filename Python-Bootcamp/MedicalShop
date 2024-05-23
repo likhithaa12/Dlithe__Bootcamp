@@ -1,0 +1,33 @@
+//inventary pharmacy management
+class MedicalCare:
+    def __init__(self):
+        self.inventory = []
+
+    def add_medicine(self, name, quantity):
+        self.inventory.append(Medicine(name, quantity))
+
+    def update_quantity(self, name, quantity):
+        for med in self.inventory:
+            if med.name == name:
+                med.quantity += quantity
+                return True
+        return False
+
+    def regularly_sold(self):
+        return [med.name for med in self.inventory if med.quantity > 25]
+
+    def not_sold(self):
+        return [med.name for med in self.inventory if   med.quantity == 0]
+
+    def medium_sold(self):
+        return [med.name for med in self.inventory if 0 < med.quantity <= 30]
+
+
+pharmacy = MedicalCare()
+pharmacy.add_medicine("Paracetamol", 20)
+pharmacy.add_medicine("Dollo 650", 0)
+pharmacy.add_medicine("Omi", 50)
+
+print("Regularly Sold Medicines:", pharmacy.regularly_sold())
+print("Not Sold Medicines:", pharmacy.not_sold())
+print("Medium Sold Medicines:", pharmacy.medium_sold())
