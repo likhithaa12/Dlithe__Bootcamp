@@ -1,1 +1,25 @@
+//expression evaluation
+def evaluate_expression(expression):
+    stack = []
+    num = 0
+    sign = '+'
+    for i, char in enumerate(expression):
+        if char.isdigit():
+            num = num * 10 + int(char)
+        if char in '+-*/' or i == len(expression) - 1:
+            if sign == '+':
+                stack.append(num)
+            elif sign == '-':
+                stack.append(-num)
+            elif sign == '*':
+                stack.append(stack.pop() * num)
+            else:
+                stack.append(int(stack.pop() / num))
+            sign = char
+            num = 0
+    return sum(stack)
 
+expression = input("please enter the expression\n")
+result = evaluate_expression(expression)
+print(f"Expression: {expression}")
+print(f"Result: {result}")
