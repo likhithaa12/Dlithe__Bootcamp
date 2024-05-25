@@ -1,0 +1,18 @@
+class Palindrome:
+    def __init__(self, value):
+        self.value = value
+
+    def is_palindrome(self):
+        
+        value_str = str(self.value)
+
+        
+        reversed_str = value_str[::-1]
+
+        
+        return value_str == reversed_str
+
+
+
+number_checker = Palindrome(input('enter a string'))
+print(number_checker.is_palindrome()) 
