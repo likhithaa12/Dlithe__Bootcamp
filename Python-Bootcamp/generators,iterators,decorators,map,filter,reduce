@@ -1,0 +1,86 @@
+#generators yeilds a sequence of values
+def my_generator():
+    for i in range(5):
+        yield i
+#iterates over the sequence
+for item in my_generator():
+    print(item)
+
+#decorators my_decorator function wraps the my_function
+
+def my_decorator(func):
+    def wrapper(*args, **kwargs):
+        print("Before the function call")
+        func(*args, **kwargs)
+        print("After the function call")
+    return wrapper
+
+@my_decorator
+def my_function():
+    print("Hello, world!")
+
+my_function()
+
+#iterators traverse through all the values it will print each item in the list
+my_list = [1, 2, 3, 4, 5]
+
+for item in my_list:
+    print(item)
+
+
+mytuple = ("apple", "banana", "cherry")
+myit = iter(mytuple)
+
+print(next(myit))
+print(next(myit))
+print(next(myit))
+
+#filter
+# Define a function to check if a number is even
+def is_even(x):
+    return x % 2 == 0
+
+numbers = [1, 2, 3, 4, 5, 6]
+
+
+even_numbers = filter(is_even, numbers)
+
+
+even_numbers = list(even_numbers)
+
+print(even_numbers)  
+
+
+#reduce
+from functools import reduce
+
+# Define a function to add two numbers
+def add(x, y):
+    return x + y
+
+numbers = [1, 2, 3, 4, 5]
+
+# Use reduce to sum the numbers
+total = reduce(add, numbers)
+
+print(total)  
+
+#map
+numbers = [1, 2, 3, 4, 5]
+
+# Using map with a lambda function to square numbers
+squared_numbers = map(lambda x: x * x, numbers)
+
+# Convert the map object to a list
+squared_numbers = list(squared_numbers)
+
+print(squared_numbers)
+
+#lambda
+
+x=lambda a:a**2+2*a
+print(x(10))
+
+
+
+
