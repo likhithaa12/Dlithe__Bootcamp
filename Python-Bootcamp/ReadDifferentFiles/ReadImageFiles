@@ -1,1 +1,22 @@
+#Reading Images using pillow
+from PIL import Image
+image = Image.open('Dog.png')
+# Displaying the image using Pillow's show method
+image.show()
 
+#Reading Images using OpenCV
+import cv2
+image = cv2.imread('Dog.png')
+# Displaying the image using OpenCV's imshow method
+cv2.imshow('Image', image)
+cv2.waitKey(0)  # Wait for a key press to close the window
+cv2.destroyAllWindows()
+
+Reading images using matplotlib
+import matplotlib.pyplot as plt
+import matplotlib.image as mpimg
+# Load and display an image
+img = mpimg.imread('Dog.png')
+plt.imshow(img)
+plt.axis('off')  # Hide axes
+plt.show()
