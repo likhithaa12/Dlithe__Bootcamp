@@ -1,1 +1,35 @@
+#Read the image using Pillow.
+#Convert the image data to a DataFrame.
+#Write the DataFrame to a CSV file.
 
+import numpy as np
+import pandas as pd
+from PIL import Image
+
+# Read the image using Pillow
+image = Image.open('images.jpg').convert('L')  # 'L' mode converts the image to grayscale
+
+# Convert the image to a NumPy array
+image_array = np.array(image)
+
+# Convert the NumPy array to a DataFrame
+df = pd.DataFrame(image_array)
+
+print(df.shape)
+# Write the DataFrame to a CSV file
+df.to_csv('output_image.csv', index=False, header=False)
+image.show()
+# Read the image using Pillow
+image = Image.open('images.jpg').convert('RGB')  # 'RGB' mode keeps the image in color
+
+# Convert the image to a NumPy array
+image_array = np.array(image)
+
+# Reshape the array to have each pixel's RGB values as a separate row
+reshaped_array = image_array.reshape(-1, image_array.shape[2])
+
+# Convert the reshaped array to a DataFrame
+df = pd.DataFrame(reshaped_array, columns=['R', 'G', 'B'])
+
+# Write the DataFrame to a CSV file
+df.to_csv('output_image1.csv', index=False)
