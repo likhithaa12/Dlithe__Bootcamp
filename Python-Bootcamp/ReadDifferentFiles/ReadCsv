@@ -1,1 +1,14 @@
+import numpy as np
+import pandas as pd
+
+# Read CSV file using Pandas
+df_csv = pd.read_csv('Book1.csv')
+print("Pandas - CSV data:")
+print(df_csv.head())
+
+# Convert DataFrame to NumPy array
+data_csv = df_csv.to_numpy()
+print("NumPy - CSV data:")
+print(data_csv)
+
 
