@@ -1,1 +1,54 @@
+#Elementwise multiplication
+
+import numpy as np
+
+# Create two 2D arrays (matrices)
+array1 = np.array([[1, 2, 3], [4, 5, 6], [7, 8, 9]])
+array2 = np.array([[9, 8, 7], [6, 5, 4], [3, 2, 1]])
+
+# Element-wise multiplication
+element_wise_product = array1 * array2
+# or
+# element_wise_product = np.multiply(array1, array2)
+
+print("Element-wise multiplication result:")
+print(element_wise_product)
+
+#2d arrays
+
+import numpy as np
+
+# Create two 2D arrays (matrices)
+matrix1 = np.array([[1, 2], [3, 4], [5, 6]])
+matrix2 = np.array([[7, 8], [9, 10]])
+
+# Matrix multiplication
+matrix_product = np.dot(matrix1, matrix2)
+# or
+# matrix_product = np.matmul(matrix1, matrix2)
+# or
+# matrix_product = matrix1 @ matrix2
+
+print("Matrix multiplication result:")
+print(matrix_product)
+
+#3d Arrays
+
+import numpy as np
+
+# Create two 3D arrays
+array1 = np.array([[[1, 2, 3], [4, 5, 6]], [[7, 8, 9], [10, 11, 12]]])
+array2 = np.array([[[1, 2, 3], [4, 5, 6]], [[7, 8, 9], [10, 11, 12]]])
+
+# Element-wise multiplication
+element_wise_product = array1 * array2
+
+# Matrix multiplication along last axis of array1 and second-to-last axis of array2
+matrix_product = np.matmul(array1, array2.transpose(0, 2, 1))
+
+print("Element-wise multiplication result:")
+print(element_wise_product)
+
+print("Matrix multiplication result:")
+print(matrix_product)
 
